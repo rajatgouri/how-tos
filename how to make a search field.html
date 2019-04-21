@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>text</title>
+	<style type="text/css">
+		.high {background-color: yellow}
+	</style>
+	<script type="text/javascript">
+		function call(event)
+		{   
+			if(event.keyCode == 13){
+
+			var x = document.getElementById("para").innerHTML;
+		    var sel = document.getElementById('sel').value;	
+		    var re = new RegExp(sel,"g");
+	        var searchResult = x.search(re);
+	        if(searchResult >=0)
+	        {
+	        	 document.getElementById('para').innerHTML = x.substr(0,searchResult)+"<span class='high'>"+x.substr(searchResult,sel.length)+"</span>"+x.substr(searchResult+sel.length,x.length-(searchResult+sel.length)); 
+	        	 document.getElementById('sel').value = "";
+	        }
+            else
+            {
+            	alert('not in paragraph');
+            	document.getElementById('sel').value = "";
+            }
+			} 
+			
+		
+		   
+        }
+		
+	</script>
+</head>
+<body>
+Type a character and press Enter Key<br><br> 	
+<input type="search" name="ser" id="sel" onkeydown="call(event)" >
+<p id="para" >This is a paragraph. and you can select some text from this paragraph. </p>
+
+</body>
+</html>

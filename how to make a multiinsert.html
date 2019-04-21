@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function call(){
+		var q = prompt("enter h2 value");
+		var w = prompt("enter div value");	
+		var x = document.getElementById("con");
+		var z = document.createElement("h2");
+	    var znode = document.createTextNode(q);
+	    z.appendChild(znode);
+	    x.appendChild(z);
+	    var a =document.createElement("div");
+	    var anode = document.createTextNode(w);
+	    a.appendChild(anode);
+	    x.appendChild(a);	
+		}
+		
+
+	</script>
+</head>
+<body>
+<div id="con">
+	
+	
+<h2>hello1</h2>
+<div>div1</div>
+<h2>hello2</h2>
+<div>div2</div>
+</div>
+<button onclick="call()">clcik</button>
+</body>
+</html>

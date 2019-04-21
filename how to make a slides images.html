@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>slideshow</title>
+  <style type="text/css">
+    #div1 {
+          height:250px;
+          width:500px;
+          border:1px solid red; 
+          position:relative;
+        }
+    .prev , .next {
+                   position:absolute;
+                   top:46%;
+                    }
+    .next {float:right;
+           right:0;
+           }   
+     .im {
+         display:none;
+         height:250px;
+         width:500px;
+     }  
+     .image {
+          height:250px;
+          width:500px;
+     }
+     .div2 { width: 60px; margin-left: 210px; margin-top: -50px}
+     .div3 { height: 10px; width: 10px; border: 1px solid; display: inline-block; border-radius: 50%; position: relative; background-color: white }
+     #ig { margin-top: 40px; }
+  </style>
+  <script type="text/javascript">
+    var slideIndex = 1;
+  
+    function slide(n)
+    {
+     document.getElementsByClassName("image")[0].style.display="none";
+      slideIndex = slideIndex+n;
+      slideshow(slideIndex);
+    }
+   
+    function slideshow(n)
+    {
+      var i;
+      var x = document.getElementsByClassName("im");
+      var y =document.getElementsByClassName("div3")
+
+      if( n > x.length)
+      {
+        slideIndex = 1;
+      }
+      if( n < 1)
+      {
+        slideIndex = x.length;
+      }
+      for(i=0; i<x.length; i++)
+      {
+        x[i].style.display="none";
+
+
+      }
+      x[slideIndex-1].style.display="block";
+      for(i=0; i<y.length; i++)
+      {
+        y[i].style.backgroundColor="white";
+
+
+      }
+      y[slideIndex-1].style.backgroundColor = " grey";
+    }
+  </script>
+</head>
+<body>
+<div  id="div1">
+  <button class="prev" onclick="slide(-1)">&#10094;</button>
+  <button class="next" onclick="slide(+1)">&#10095;</button>
+  <img class="image" src="Desert.jpg">
+  <img class="im" src="Desert.jpg">
+  <img class="im" src="Lighthouse.jpg">
+  <img class="im" src="jellyfish.jpg">
+  <img class="im" src="H.jpg">
+</div>
+
+</body>
+</html>
+</body>
+</html>

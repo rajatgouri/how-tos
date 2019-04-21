@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animated menu icon</title>
+	<style type="text/css">
+	    .container {
+	                width:35px;
+	                height:30px;
+	                
+	                }
+		.bar1 , .bar2 , .bar3 { border:2px solid; 
+			                    width:30px;
+		                      margin-top: 5px; 
+		                      transition:0.3s;
+		                       }
+		 .change  .bar1 { transform: rotate(-45deg);
+		        margin-top: 13px;
+		         }
+		 .change .bar2 { opacity:0; }       
+		 .change .bar3 { transform: rotate(45deg);
+		         margin-top: -13px;
+		          }
+
+	</style>
+	<script type="text/javascript">
+		function call(x)
+		{   
+			x.classList.toggle("change");
+		}
+	</script>
+</head>
+<body>
+<div class="container" onclick="call(this)">	
+<div  class="bar1"></div>
+<div  class="bar2"></div>
+<div class="bar3"></div>
+</div>
+</body>
+</html>

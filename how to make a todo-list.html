@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>to do</title>
+
+  
+
+
+  <style type="text/css">
+    #container { height: 150px;
+     border:1px solid;
+     
+      }
+    #inp { height:30px;
+     width:800px;
+      margin:50px 0px 0px 100px; 
+    }
+    #btn { height:35px;
+     width:250px; 
+     margin: 50px 0px 0px 20px;
+      }
+    #container-2 { border:1px solid;
+     height: 400px; 
+   }
+    ul li { list-style-type: none;
+       border:1px solid; 
+       padding: 15px 0px 15px 20px;
+       width:1249px;
+      
+      }
+    .close { position: absolute;
+     right: 2%; 
+     font-size: 30px;
+     border:1px solid;
+     margin-top: -16px;
+     padding-bottom: 7px;
+     padding-top: 7px;
+    
+   }
+    ul li.checked { 
+    text-decoration: line-through;
+     }
+    ul li.checked:before { content:"";
+     position: absolute;
+     height:25px;
+     width:10px;
+     border: solid;
+     border-width: 0px 3px 3px 0px;
+     margin-left: -45px;
+     transform: rotate(45deg); 
+    
+    }
+  
+  </style>
+ 
+</head>
+<body onload="bu()">
+<div id="container">
+  <input type="text" name="txt" id="inp" ><button id="btn" onclick="ip()">ADD</button>
+</div>
+<div id="container-2">
+  <ul id="list">
+      <li>Item-1</li>
+      <li>Item-2</li>
+  </ul>
+</div>
+ <script type="text/javascript">
+  
+    var parent = document.getElementsByTagName("LI");
+  
+    for(var i=0; i<parent.length;i++)
+    {
+    var x = document.createElement("span");
+    var node = document.createTextNode("\u00D7");
+    x.appendChild(node);
+    x.className = "close";
+    parent[i].appendChild(x);
+    
+   }
+   var close = document.getElementsByClassName("close");
+   var i;
+   for (i = 0; i < close.length; i++) {
+   close[i].addEventListener("click", function() {
+     this.parentElement.style.display = "none"; 
+  });
+  }
+
+  var list = document.querySelector('ul');
+   list.addEventListener('click', function(ev) {
+  if (ev.target.tagName == 'LI') {                   
+    ev.target.classList.toggle('checked');
+  }
+    });
+ 
+  function ip(){
+     var x1 = document.getElementById("inp").value;
+     var x2 = x1.charAt(0);
+     var x3 = x1.charAt(0).toUpperCase(); 
+     var x = x1.replace(x2,x3);
+     var parent = document.getElementById("list");
+     var child = document.createElement("LI");
+    
+     var node = document.createTextNode(x);
+     child.appendChild(node);
+     if(x=="")
+     {
+      alert("please enter something")
+     }
+     else
+     {
+     parent.appendChild(child);
+      document.getElementById("inp").value="";
+     }
+     var parent = document.getElementsByTagName("LI");
+     for(var i=0; i<parent.length+1; i++) 
+     {
+     var x = document.createElement("span");
+      var node = document.createTextNode("\u00D7");
+      x.appendChild(node);
+      x.addEventListener("click",function(){
+        this.parentElement.style.display="none";
+      });
+      x.className = "close";
+      parent[i].appendChild(x);
+      }    
+     
+  }
+  
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sort list</title>
+	<style type="text/css">
+		.container { border:1px solid;
+		      width:300px;
+		      padding-left: 20px;
+		       }
+		       
+	</style>
+	<script type="text/javascript">
+		function call()
+		{
+			var t = [];
+			for(var i=0; i<5;i++){
+		t[i] = document.getElementsByTagName("li")[i].innerHTML;
+	}
+	//alert(t);
+		/*var a = document.getElementsByTagName('li')[0].innerHTML;
+		var b = document.getElementsByTagName('li')[1].innerHTML;
+		var c = document.getElementsByTagName('li')[2].innerHTML;
+		var d = document.getElementsByTagName('li')[3].innerHTML;
+		var e = document.getElementsByTagName('li')[4].innerHTML;
+        var x = [ a , b , c , d , e];
+        var z = x.sort();*/
+        var z = t.sort();
+        document.getElementById("d").innerHTML = " ";
+        for (var i = 0 ; i<z.length;i++){
+        document.getElementsByTagName('div')[1].innerHTML += "<ul><li>"+z[i]+"</li></ul>"
+        //document.innerHTMNL = document.innerHTML +  "<ul><li>"+z[i]+"</li></ul>"
+    }
+		
+
+		
+	    }
+	</script>
+</head>
+<body>
+<div class="container">	
+<h2>Countries</h2>
+<p>click button to sort Countries name</p>
+<div id="d">
+	<ul>
+<li>Russia</li><br>
+<li>Perussia</li><br>
+<li>India</li><br>
+<li>Australia</li><br>
+<li>Berlin</li><br>
+</ul>
+</div>
+</div>
+<button onclick="call()">Sort list</button>
+</body>
+</html>

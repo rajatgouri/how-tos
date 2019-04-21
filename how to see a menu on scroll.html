@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>scroll krne p menu aaje</title>
+	<style type="text/css">
+		#div1 { background-color: grey; 
+		       height:0px;
+		       width:1330px;
+		       transition: 0.5s; 
+		       overflow: hidden;
+		      }
+		#container { overflow: scroll;
+		            height:300px;
+		             }
+		a { display:inline-block;
+		    width:100px;
+		    color:white;
+		    border:1px solid;
+		    text-align: center;
+		    height:30px; 
+		    padding-top:5px;
+		     }
+		    
+	</style>
+	<script type="text/javascript">
+		function call()
+		{  
+         if(document.getElementById("container").scrollTop > 10)
+         {
+         document.getElementById("div1").style.height="38px";
+         document.getElementById("div1").style.position="fixed";
+         }
+         else
+         {
+         document.getElementById("div1").style.height="0px";	
+         }
+		}
+	</script>
+</head>
+<body>
+<div id="container" onscroll="call()">	
+<div id="div1">
+	<a> Home </a>
+	<a> Class </a>
+	<a> Text </a>
+	<a> Element</a> 
+</div>	
+<p>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br> 
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br> 
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+This is a paragraph<br>
+</p>
+</div>
+</body>
+</html>

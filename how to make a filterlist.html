@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filterlist</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+          $("input").keyup(function(){
+            var x = $("input").val().toLowerCase();
+          $("#list li").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(x) > -1); 
+          $(this).click(function(){
+             var x = $(this).text();
+             $("#inp").val(x);
+          });
+            });
+             
+          });
+		});
+	</script>
+</head>
+<body>
+FILTER LIST BELOW:<br>	
+<input id="inp" type="Search" name="s" placeholder="search for fruits"><br>	
+<ol id="list">
+	<li>mango</li>
+	<li>banana</li>
+	<li>apple</li>
+	<li>Lichi</li>
+	<li>cherry</li>
+	<li>avacado</li>
+	<li>pineapple</li>
+	<li>kiwi</li>
+   <!--<a href="#">a tag</a> //is tarah se koi b agar ho element to usko * laga pe kr skte h-->
+</ol>
+</body>
+</html>

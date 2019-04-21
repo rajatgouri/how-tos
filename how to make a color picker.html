@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slider</title>
+	<style type="text/css">
+		#red , #green , #blue { margin-top: 10px; width: 500px;}
+        #red { background-color: red; }
+        #green { background-color: green; }
+        #blue { background-color: blue; }
+        #block { height:250px; width:250px; border:1px solid; margin-top: 20px; background-color: red; }
+	</style>
+	<link rel="stylesheet" type="text/css" href="jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#red").slider({
+				value:255,
+				max:255,
+				min:0,
+				change : refresh,
+				
+			});
+			$("#green").slider({
+				value:10,
+				max:255,
+				min:0,
+				change : refresh,
+				
+			});
+			$("#blue").slider({
+				value:10,
+				max:255,
+				min:0,
+				change : refresh,
+				
+			});
+          function refresh(){
+             var r = $("#red").slider("option","value");
+             var g = $("#green").slider("option","value");
+             var b = $("#blue").slider("option","value");
+             
+             
+             $("#block").css("background-color", "rgb("+r+","+g+","+b+")");   //invalue ki jagah ye rgb ki value dalni h
+          }
+		})
+	</script>
+</head>
+<body>
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+<div id="block">
+	
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>remainder</title>
+	<script type="text/javascript">
+		function call(){
+		var a = setInterval(function ()
+		{
+		var x = document.getElementById("d").value;
+		var y = document.getElementById("t").value;
+		var remdte = new Date(x+" "+y);
+		var remtim = remdte.getTime();
+        var now = new Date();
+        var nowtim = now.getTime();
+        var distance = remtim - nowtim;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("div1").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        
+        if(distance < 0)
+        {
+        	clearInterval(a);
+        	alert("done");
+        	document.getElementById("div1").style.display="none";
+        }
+	},1000) 
+
+	}	
+	</script>
+</head>
+<body>
+<div id="div1"></div>	
+enter date : <input type="date" name="dte" id="d"><br>
+enter time : <input type="time" name="tim" id="t"><br>
+<button onclick="call()">start CountDown</button>
+</body>
+</html>

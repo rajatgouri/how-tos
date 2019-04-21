@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>progressbar</title>
+	<style type="text/css">
+		#container { height: 20px; border: 1px solid; }
+		#bar { height:20px; width:1%; position: relative; background-color: green }
+	</style>
+    <script type="text/javascript">
+    	function move(){
+    	var width = 1;
+    	var a = setInterval(call, 10) 
+    	function call(){
+             if(width >= 100)
+             {
+             	var text = document.getElementById("container").innerHTML = "Download complete";
+                
+             } 
+             else
+             { 
+             	width=width+1;
+             	document.getElementById("bar").style.width= width + "%";
+             }
+          }
+    	}
+
+    </script>
+</head>
+<body>
+<div id="container">
+	<div id="bar">
+		
+	</div>
+</div>
+<button onclick="move()">run</button>
+</body>
+</html>

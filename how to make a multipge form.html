@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>multiple-page-form</title>
+	<style type="text/css">
+		.container { border:1px solid; height: 400px; }
+		h1 {text-align: center; text-decoration: underline;}
+		.block-container { height:200px; width:1000px; border:1px solid; margin-left: 150px;}
+        .nxt { height:40px;  width:100px; position: relative; left: 70%; margin-top: 35px;}
+        .prv { height:40px;  width:100px; position: relative; left: 70%; margin-top: 35px; display: none;}
+        .sub {  height:40px;  width:100px; position: absolute;  left: 77.1%; display: none; }
+        .block { height:200px; width:1000px;  display: none;  }
+        input { height: 40px; width:800px; border-radius: 10px; margin-top: 30px; margin-left: 100px;}
+       
+	</style>
+	<script type="text/javascript">
+		var slideIndex = 0;
+		function slide(n)
+		{   
+			document.getElementsByClassName("block-1")[0].style.display="none";
+			slideIndex=slideIndex+n;
+			show(slideIndex);
+		}
+		function show(n)
+		{   
+		    var i = n; 
+			var x = document.getElementsByClassName("block");
+			if(n==x.length-1)
+			{
+				document.getElementsByClassName("nxt")[0].style.display="none";
+				document.getElementsByClassName("sub")[0].style.display="block";
+				document.getElementsByClassName("sub")[0].style.marginTop="-40px"
+			}
+			else
+			{
+				document.getElementsByClassName("nxt")[0].style.display="block";
+				document.getElementsByClassName("nxt")[0].style.marginTop="-40px";
+				document.getElementsByClassName("nxt")[0].style.marginLeft="100px";
+				document.getElementsByClassName("sub")[0].style.display="none";
+			}
+			if(n==0)
+			{
+				document.getElementsByClassName("prv")[0].style.display="none";
+				document.getElementsByClassName("nxt")[0].style.marginTop="38px";
+			}
+			else
+			{
+				document.getElementsByClassName("prv")[0].style.display="block";
+			}
+			for(i=0;i<x.length;i++)
+			{
+				x[i].style.display="none";
+			}
+            x[slideIndex].style.display="block"
+		}
+	</script>
+</head>
+<body>
+<div class="container">
+	<h1>Registration-Form</h1>
+	<div class="block-container">
+		<div class="block-1">
+			<input type="text" name="fnme" placeholder="First_Name"><br>
+			<input type="text" name="lnme" placeholder="Last_Name">
+		</div>
+		<div class="block">
+			<input type="text" name="fnme" placeholder="First_Name"><br>
+			<input type="text" name="lnme" placeholder="Last_Name">
+		</div>
+		<div class="block">
+			<input type="address" name="add" placeholder="Address"><br>
+			<input type="text" name="num" placeholder="Number">
+		</div>
+		<div class="block">
+			<input type="email" name="mail" placeholder="E-Mail"><br>
+			<input type="password" name="pass" placeholder="Password">
+		</div>
+	</div>
+	<button class="prv" onclick="slide(-1)">Prev</button><button class="nxt" onclick="slide(+1)">Next</button>
+	<button class="sub">Submit</button>
+</div>
+</body>
+</html>
